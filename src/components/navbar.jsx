@@ -16,5 +16,5 @@ const NavBar = ({ totalCounters }) => {
 
 export default NavBar;
 
-// Note: React will pass the props object as an argument for stateless function component at runtime
+// Note: Stateless Function Component do not have props property instead the props is passed as an argument. React will pass the props object as an argument for stateless function component at runtime
 // Using object destructuring eliminating the need to refer the props object
