@@ -72,6 +72,13 @@ class Counter extends Component {
 					Increment
 				</button>
 				<button
+					className="btn btn-secondary btn-sm m-2"
+					onClick={() => this.props.onDecrement(this.props.counter)}
+					disabled={this.props.counter.value === 0 ? "disabled" : ""}
+				>
+					Decrement
+				</button>
+				<button
 					className="btn btn-outline-info btn-sm m-2"
 					onClick={() => this.props.onReset(this.props.counter)}
 				>

@@ -2,7 +2,7 @@ import React from "react";
 import Counter from "./counter";
 
 // Stateless Function Component
-const Counters = ({ onResetAll, counters, onDelete, onIncrement, onReset }) => {
+const Counters = ({ onResetAll, counters, onDelete, onIncrement, onDecrement, onReset }) => {
   // Note: to move the state up, the following piece of code has been moved up to it's parent componentso that NavBar component can have access to the state properties
 
   return (
@@ -19,6 +19,7 @@ const Counters = ({ onResetAll, counters, onDelete, onIncrement, onReset }) => {
           key={counter.id}
           onDelete={onDelete}
           onIncrement={onIncrement}
+          onDecrement={onDecrement}
           onReset={onReset}
           counter={counter}
         />

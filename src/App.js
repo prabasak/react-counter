@@ -6,10 +6,10 @@ import NavBar from './components/navbar';
 class App extends React.Component {
   state = {
 		counters: [
-			{ id: 1, value: 1 },
-			{ id: 2, value: 2 },
-			{ id: 3, value: 3 },
-			{ id: 4, value: 4 }
+			{ id: 1, value: 0 },
+			{ id: 2, value: 0 },
+			{ id: 3, value: 0 },
+			{ id: 4, value: 0 }
 		]
 	};
 
@@ -34,6 +34,14 @@ class App extends React.Component {
 		this.setState({ counters });
 	};
 
+	handleDecrement = counter => {
+		const counters = [...this.state.counters],
+			index = counters.indexOf(counter);
+		counters[index] = { ...counter };
+		counters[index].value -= 1;
+		this.setState({ counters });
+	};
+
 	handleReset = counter => {
 		const counters = [...this.state.counters],
 			index = counters.indexOf(counter);
@@ -50,7 +58,8 @@ class App extends React.Component {
           <Counters
             onResetAll={this.handleResetAll}
             onReset={this.handleReset}
-            onIncrement={this.handleIncrement}
+						onIncrement={this.handleIncrement}
+						onDecrement={this.handleDecrement}
             onDelete={this.handleDelete}
             counters={this.state.counters}
           />
